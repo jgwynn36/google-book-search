@@ -4,6 +4,7 @@
   "description": "MERN - React application",
   "main": "server.js",
   "dependencies": {
+    "concurrently": "^4.1.0",
     "express": "^4.16.4",
     "nodemon": "^1.19.0",
     "react": "^16.8.6",
