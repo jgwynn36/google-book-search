@@ -4,8 +4,7 @@
   "description": "MERN - React application",
   "main": "server.js",
   "engines": {
-    "node": "10.13.0",
-    "yarn": "1.12.3"
+    "node": "10.13.0"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -24,9 +23,9 @@
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd google-book-search/client && npm run start",
-    "install": "cd google-book-search/client && npm install",
-    "build": "cd google-book-search/client && npm run build",
+    "client": "cd /google-book-search/client && npm run start",
+    "install": "cd /google-book-search/client && npm install",
+    "build": "cd /google-book-search/client && npm run build",
     "heroku-postbuild": "npm run build"
   },
   "keywords": [
