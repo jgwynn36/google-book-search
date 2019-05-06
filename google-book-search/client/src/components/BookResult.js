@@ -19,7 +19,7 @@ class BookResult extends React.Component {
             title: this.props.title,
             authors: this.props.authors,
             link: this.props.link,
-            img: this.props.img,
+            image: this.props.img,
             description: this.props.description
         }
         e.preventDefault();
@@ -71,8 +71,8 @@ class BookResult extends React.Component {
                 <div className="row">
                     {(this.props.img)? <img src= {
                         // if small thumbsnail exists on this.props.img use that else if thumbnail exists on this.props.img use that else leave src empty
-                        (this.props.img.smallThumbnail)? this.props.img.smallThumbnail:
-                        (this.props.img.thumbnail)? this.props.img.thumbnail: ""
+                        (this.props.image.smallThumbnail)? this.props.image.smallThumbnail:
+                        (this.props.image.thumbnail)? this.props.image.thumbnail: ""
                     } alt="book cover"/>: null}
                     <p>{(this.props.description)? this.props.description: "N/A"}</p>
                 </div>

@@ -14,12 +14,12 @@ function SearchForm(props) {
           name="bookInput"
           id="bookInput"
           form="bookSearch"
-          onChange={e => props.handleChange(e)}
+          onChange={(e) => props.handleChange(e)}
           placeholder="Book Title"
           required
         />
         <br />
-        <button type="submit" onClick={e => props.handleSearchClick(e)}>
+        <button type="submit" onClick={(e) => props.handleSearchClick(e)}>
           Search
         </button>
       </form>
