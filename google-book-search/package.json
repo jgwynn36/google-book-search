@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "MERN - React application",
   "main": "server.js",
+  "engines": {
+    "node": "8.11.3"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "concurrently": "^4.1.0",
