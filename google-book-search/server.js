@@ -32,6 +32,15 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
+// If its production environment!
+if (process.env.NODE_ENV === 'production') {
+  const path = require('path');
+  app.use('/static', express.static(path.join(__dirname, 'client/build/static')));
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client/build/'))
+  });
+}
+
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
