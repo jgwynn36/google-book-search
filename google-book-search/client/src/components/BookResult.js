@@ -15,14 +15,14 @@ class BookResult extends React.Component {
 
     handleSaveClick = function(e) {
         this.setState({saved: true});
-        const bookData = {
+        let bookData = {
             title: this.props.title,
             authors: this.props.authors,
             link: this.props.link,
             image: this.props.img,
             description: this.props.description
         }
-        e.preventDefault();
+        e.preventDefault(e);
         API.addBookToDB(bookData).then(
             (response) => {
                 console.log(response);
@@ -71,7 +71,7 @@ class BookResult extends React.Component {
                 <div className="row">
                     {(this.props.img)? <img src= {
                         // if small thumbsnail exists on this.props.img use that else if thumbnail exists on this.props.img use that else leave src empty
-                        (this.props.image.smallThumbnail)? this.props.image.smallThumbnail:
+                        (this.props.img.smallThumbnail)? this.props.img.smallThumbnail:
                         (this.props.image.thumbnail)? this.props.image.thumbnail: ""
                     } alt="book cover"/>: null}
                     <p>{(this.props.description)? this.props.description: "N/A"}</p>
