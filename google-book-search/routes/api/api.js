@@ -15,21 +15,20 @@ module.exports = function(app) {
       });
   });
 
-  app.post("/search", (req, res) => {
+  app.post("/api/search", (req, res) => {
     // set bookTitle to the req.body.title with spaces replaced with plus signs(+)
     let bookTitle = req.body.title.replace(/\s/g, "+");
     console.log(bookTitle); 
     axios
       .get(
-        `https://www.googleapis.com/books/v1/volumes?q=${bookTitle}&key=${
-          process.env.GOOGLEBOOKS_APIKEY
-        }`
+        `https://www.googleapis.com/books/v1/volumes?q=bible:&key=AIzaSyAFm9cp0bESuJcACRLuVdU6glnYiZ6XJps&startIndex=0&maxResults=40`
       )
       .then(response => {
-        res.json(response.data.items);
+        console.log('THE RESPONSE ', response.data.items)
+        res.json({books: response.data.items});
       })
       .catch(err => {
-        res.json({ error: error });
+        res.json({ error: err });
       });
   });
 

@@ -5,7 +5,7 @@ export default {
     return axios.get("/api/books");
   },
   searchBooks: title => {
-    return axios.post("/search", { title: title });
+    return axios.post("/api/search", { title: title });
   },
   addBookToDB: bookData => {
     return axios.post("/api/books", bookData);
