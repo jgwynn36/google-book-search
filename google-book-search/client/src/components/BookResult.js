@@ -22,10 +22,11 @@ class BookResult extends React.Component {
             image: this.props.img,
             description: this.props.description
         }
-        e.preventDefault(e);
+        console.log("When I click save" + bookData); 
+        e.preventDefault();
         API.addBookToDB(bookData).then(
             (response) => {
-                console.log(response);
+                console.log("Book Result added to DB" + response);
             }
         ).catch(
             (err) => {
